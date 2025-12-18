@@ -1,0 +1,151 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(7, 59, 178);
+}
+
+.nav1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(255, 255, 255);
+}
+
+.nav1 img {
+  width: 100px;
+}
+
+.Header-title {
+  font-size: larger;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+}
+
+.nav2 {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+.About-button {
+  border: solid rgb(255, 255, 255);
+  border-radius: 7px;
+  margin: 20px;
+  padding: 3px;
+  background-color: rgba(255, 255, 255, 0.179);
+}
+
+.home-mid {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(37, 98, 242);
+  gap: 20px;
+  padding: 20px;
+}
+
+.Mid-h1 {
+  font-size: xx-large;
+  color: rgb(255, 255, 255);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.Mid-h5 {
+  color: rgb(255, 249, 250);
+  font-weight:400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 200px;
+}
+
+.Mid-p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(255, 255, 255);
+  margin-left: 150px;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav1 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav1 img {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+  .Header-title {
+    font-size: large;
+  }
+
+  .nav2 {
+    font-size: 14px;
+  }
+
+  .About-button {
+    margin: 10px;
+    padding: 2px;
+  }
+
+  .home-mid {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .Mid-h1 {
+    font-size: x-large;
+  }
+
+  .Mid-h5 {
+    margin-left: 50px;
+  }
+
+  .Mid-p {
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .nav1 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav1 img {
+    width: 60px;
+    margin-bottom: 5px;
+  }
+
+  .Header-title {
+    font-size: medium;
+  }
+
+  .nav2 {
+    font-size: 12px;
+  }
+
+  .About-button {
+    margin: 5px;
+    padding: 1px;
+  }
+
+  .home-mid {
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .Mid-h1 {
+    font-size: large;
+  }
+
+  .Mid-h5 {
+    margin-left: 40px;
+    
+  }
+
+  .Mid-p {
+  margin-left: 40px;
+  }
+}
+

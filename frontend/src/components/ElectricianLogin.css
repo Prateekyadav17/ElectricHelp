@@ -1,0 +1,104 @@
+
+.electrician-login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 7%;
+ min-height: 100vh;
+  background-image: url("../assets/Home-main-bg.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.electrician-login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #d6d4f5;
+  border-radius: 12px;
+  width: 300px;
+  box-sizing: border-box;
+  margin-bottom: 1%;
+}
+
+.electrician-login-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.electrician-login-text {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.electrician-login-text h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.electrician-login-form-group {
+  margin-bottom: 16px;
+}
+
+.electrician-login-form-group input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.electrician-login-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.electrician-login-button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2979ff;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.electrician-login-button:hover {
+  background: #1565c0;
+}
+
+.electrician-login-back-button {
+  margin-top: 16px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ccc;
+  color: #222;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.electrician-login-back-button:hover {
+  background: #aaa;
+}
+
+
+.electrician-login-forgot-password {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #2979ff;
+  cursor: pointer;
+}
+
+.electrician-login-forgot-password:hover {
+  text-decoration: underline;
+}

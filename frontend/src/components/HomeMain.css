@@ -1,0 +1,118 @@
+.Main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* Even spacing between cards */
+  padding-top: 7%;
+   min-height: 100vh;
+  background-image: url("../assets/Home-main-bg.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.Main-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
+  min-height: 100px; /* Adjust as needed */
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #d6d4f5;
+  border-radius: 12px;
+  width: 300px; /* Ensures cards have width */
+  box-sizing: border-box;
+  margin-bottom:1%;
+}
+
+.Main-logo{
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Main-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.Main-text {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.Main-text h1{
+  font-size: 1.5rem; /* Makes font larger */
+  font-weight: bold; /* Makes font bold */
+  color: #222; /* Optional: Choose a strong color */
+  margin-bottom: 8px;
+}
+
+.Main-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MainLogin-button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2979ff;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.MainLogin-button:hover {
+  background: #042c5b;
+  
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .Main-container {
+    gap: 30px;
+    padding-top: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Main-container {
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 10%;
+  }
+
+  .Main-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Main-container {
+    gap: 20px;
+    padding-top: 15%;
+    padding-bottom: 20%;
+  
+  }
+
+  .Main-card {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .Main-text h1 {
+    font-size: 2rem;
+  }
+
+  .MainLogin-button {
+    padding: 6px 16px;
+    font-size: 16px;
+  }
+}
+
