@@ -7,8 +7,13 @@ const Homefooter = () => {
       <div className="footer-content">
         <p>&copy; 2025 ElectricHelp. All rights reserved.</p>
         <div className="footer-links">
-          <a href="https://prateek-yadav17.netlify.app/#contact">Made with💜 by prateek</a>
-          
+          <a
+            href="https://prateek-yadav17.netlify.app/#contact"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Made with💜 by prateek
+          </a>
         </div>
       </div>
     </footer>

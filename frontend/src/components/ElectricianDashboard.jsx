@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import api from '../utils/api';
 import './ElectricianDashboard.css';
 
+// Vite-safe asset import (important for production/Vercel)
+import electricianLogo from '../assets/electrician-logo.png';
+
 const ElectricianDashboard = ({ onLogout }) => {
   const [activeTab, setActiveTab] = useState('assigned'); // assigned | pending | progress | resolved | profile
   const [complaints, setComplaints] = useState([]);
@@ -22,6 +25,7 @@ const ElectricianDashboard = ({ onLogout }) => {
     if (activeTab !== 'profile' && user?.role === 'electrician') {
       fetchTasks();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTab, user]);
 
   const fetchTasks = async () => {
@@ -50,7 +54,6 @@ const ElectricianDashboard = ({ onLogout }) => {
       setError('');
       setSuccess('');
 
-      // Use a dedicated status route if available, otherwise use a generic patch
       await api.patch(`/complaints/${selectedComplaint._id}/status`, {
         status: newStatus,
         comment
@@ -114,7 +117,7 @@ const ElectricianDashboard = ({ onLogout }) => {
     <div className="electrician-dashboard-container">
       <div className="electrician-dashboard-header">
         <div className="electrician-dashboard-logo">
-          <img src="/src/assets/electrician-logo.png" alt="Electrician Logo" />
+          <img src={electricianLogo} alt="Electrician Logo" />
           <h1>Electrician Dashboard</h1>
         </div>
         <div className="electrician-dashboard-user">
@@ -269,7 +272,7 @@ const ElectricianDashboard = ({ onLogout }) => {
             <h2>My Profile</h2>
             <div className="electrician-profile-card">
               <div className="electrician-profile-avatar">
-                <img src="/src/assets/electrician-logo.png" alt="Profile" />
+                <img src={electricianLogo} alt="Profile" />
               </div>
               <div className="electrician-profile-info">
                 <div className="electrician-profile-field">

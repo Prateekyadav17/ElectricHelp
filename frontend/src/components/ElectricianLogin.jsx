@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import API from '../utils/api';
 import "./ElectricianLogin.css";
 
+// Vite-safe asset import (important for production/Vercel)
+import electricianLogo from '../assets/electrician-logo.png';
+
 const ElectricianLogin = ({ onBackClick, onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -61,7 +64,7 @@ const ElectricianLogin = ({ onBackClick, onLoginSuccess }) => {
         email: fpEmail.trim().toLowerCase()
       });
 
-      let msg = 'If the email exists, a reset link has been sent.';
+      const msg = 'If the email exists, a reset link has been sent.';
       if (res?.data?.devToken) {
         // ONLY for development/testing when Gmail not configured
         setFpDevToken(res.data.devToken);
@@ -78,11 +81,11 @@ const ElectricianLogin = ({ onBackClick, onLoginSuccess }) => {
     <div className="electrician-login-container">
       <div className="electrician-login-card">
         <div className="electrician-login-logo">
-          <img src="/src/assets/electrician-logo.png" alt="Logo" />
+          <img src={electricianLogo} alt="Logo" />
         </div>
+
         <div className="electrician-login-text">
           <h1>Electrician Login</h1>
-          
         </div>
 
         {showForgotPassword ? (
@@ -141,6 +144,7 @@ const ElectricianLogin = ({ onBackClick, onLoginSuccess }) => {
                 required
               />
             </div>
+
             <div className="electrician-login-form-group">
               <input
                 type="password"
@@ -150,7 +154,9 @@ const ElectricianLogin = ({ onBackClick, onLoginSuccess }) => {
                 required
               />
             </div>
+
             {error && <p className="electrician-login-error">{error}</p>}
+
             <div className="electrician-login-buttons">
               <button
                 type="submit"
@@ -160,6 +166,7 @@ const ElectricianLogin = ({ onBackClick, onLoginSuccess }) => {
                 {loading ? 'Logging in...' : 'Login'}
               </button>
             </div>
+
             <p
               className="electrician-login-forgot-password"
               onClick={() => {

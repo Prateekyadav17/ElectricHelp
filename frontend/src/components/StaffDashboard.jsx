@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import API from '../utils/api';
 import './StaffDashboard.css';
+import staffLogo from '../assets/staff-logo.png';
 
 const StaffDashboard = ({ onLogout }) => {
   const [activeTab, setActiveTab] = useState('menu'); // default to menu (3 cards)
@@ -168,7 +169,7 @@ const StaffDashboard = ({ onLogout }) => {
       {/* Header */}
       <div className="staff-dashboard-header">
         <div className="staff-dashboard-logo">
-          <img src="/src/assets/staff-logo.png" alt="Staff Logo" />
+        <img src={staffLogo} alt="Staff Logo" />
           <h1>Staff Dashboard</h1>
         </div>
         <div className="staff-dashboard-user">
@@ -380,7 +381,7 @@ const StaffDashboard = ({ onLogout }) => {
             <h2>My Profile</h2>
             <div className="staff-profile-card">
               <div className="staff-profile-avatar">
-                <img src="/src/assets/staff-logo.png" alt="Profile" />
+              <img src={staffLogo} alt="Profile" />
               </div>
               <div className="staff-profile-info">
                 <div className="staff-profile-field"><strong>Name:</strong><span>{user?.name || 'N/A'}</span></div>

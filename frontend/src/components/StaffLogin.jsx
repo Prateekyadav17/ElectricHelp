@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import API from '../utils/api';
 import "./StaffLogin.css";
+import staffLogo from '../assets/staff-logo.png';
 
 const StaffLogin = ({ onBackClick, onLoginSuccess }) => {
   const [email, setEmail] = useState('');
@@ -72,7 +73,7 @@ const StaffLogin = ({ onBackClick, onLoginSuccess }) => {
     <div className="staff-login-container">
       <div className="staff-login-card">
         <div className="staff-login-logo">
-          <img src="/src/assets/staff-logo.png" alt="Logo" />
+          <img src={staffLogo} alt="Logo" />
         </div>
         <div className="staff-login-text">
           <h1>Staff Login</h1>

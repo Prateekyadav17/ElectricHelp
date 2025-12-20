@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import API from '../utils/api';
 import "./AdminLogin.css";
 
+// Vite-safe asset import (important for Vercel/production)
+import adminLogo from '../assets/admin-logo.png';
+
 const AdminLogin = ({ onBackClick, onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -61,7 +64,7 @@ const AdminLogin = ({ onBackClick, onLoginSuccess }) => {
         email: fpEmail.trim().toLowerCase()
       });
 
-      let msg = 'If the email exists, a reset link has been sent.';
+      const msg = 'If the email exists, a reset link has been sent.';
       if (res?.data?.devToken) {
         // ONLY for development/testing when Gmail is not fully configured
         setFpDevToken(res.data.devToken);
@@ -78,13 +81,12 @@ const AdminLogin = ({ onBackClick, onLoginSuccess }) => {
     <div className="admin-login-container">
       <div className="admin-login-card">
         <div className="admin-login-logo">
-          <img src="/src/assets/admin-logo.png" alt="Admin Logo" />
+          <img src={adminLogo} alt="Admin Logo" />
         </div>
+
         <div className="admin-login-text">
           <h1>Admin Login</h1>
-          <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>
-            
-          </p>
+          <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }} />
         </div>
 
         {showForgotPassword ? (
@@ -143,6 +145,7 @@ const AdminLogin = ({ onBackClick, onLoginSuccess }) => {
                 required
               />
             </div>
+
             <div className="admin-login-form-group">
               <input
                 type="password"
@@ -152,7 +155,9 @@ const AdminLogin = ({ onBackClick, onLoginSuccess }) => {
                 required
               />
             </div>
+
             {error && <p className="admin-login-error">{error}</p>}
+
             <div className="admin-login-buttons">
               <button
                 type="submit"
@@ -162,6 +167,7 @@ const AdminLogin = ({ onBackClick, onLoginSuccess }) => {
                 {loading ? 'Logging in...' : 'Login'}
               </button>
             </div>
+
             <p
               className="admin-login-forgot-password"
               onClick={() => {

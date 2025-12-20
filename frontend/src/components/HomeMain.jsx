@@ -1,13 +1,18 @@
 import React from 'react';
 import "./HomeMain.css";
 
+// Vite-safe asset imports
+import staffLogo from '../assets/staff-logo.png';
+import electricianLogo from '../assets/electrician-logo.png';
+import adminLogo from '../assets/admin-logo.png';
+
 const HomeMain = ({ onStaffLoginClick, onElectricianLoginClick, onAdminLoginClick }) => {
   return (
     <>
       <div className="Main-container">
         <div className="Main-card" onClick={onStaffLoginClick}>
           <div className="Main-logo">
-            <img src="src/assets/staff-logo.png" alt="Staff Logo" />
+            <img src={staffLogo} alt="Staff Logo" />
           </div>
           <div className="Main-text">
             <h1>Staff</h1>
@@ -17,9 +22,10 @@ const HomeMain = ({ onStaffLoginClick, onElectricianLoginClick, onAdminLoginClic
             <button className="MainLogin-button">Login</button>
           </div>
         </div>
+
         <div className="Main-card" onClick={onElectricianLoginClick}>
           <div className="Main-logo">
-            <img src="src/assets/electrician-logo.png" alt="Electrician Logo" />
+            <img src={electricianLogo} alt="Electrician Logo" />
           </div>
           <div className="Main-text">
             <h1>Electrician</h1>
@@ -29,9 +35,10 @@ const HomeMain = ({ onStaffLoginClick, onElectricianLoginClick, onAdminLoginClic
             <button className="MainLogin-button">Login</button>
           </div>
         </div>
+
         <div className="Main-card" onClick={onAdminLoginClick}>
           <div className="Main-logo">
-            <img className="admin-logo" src="src/assets/admin-logo.png" alt="Admin Logo" />
+            <img className="admin-logo" src={adminLogo} alt="Admin Logo" />
           </div>
           <div className="Main-text">
             <h1>Admin</h1>

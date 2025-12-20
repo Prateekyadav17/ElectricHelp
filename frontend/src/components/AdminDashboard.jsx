@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import API, { authHeaders } from '../utils/api';
 import './AdminDashboard.css';
 
+// Vite-safe asset imports (important for production / Vercel)
+import adminLogo from '../assets/admin-logo.png';
+
 const RegisterUserCard = ({ onSuccess }) => {
   const [form, setForm] = useState({
     role: 'electrician',
@@ -21,7 +24,8 @@ const RegisterUserCard = ({ onSuccess }) => {
     e.preventDefault();
     try {
       setSubmitting(true);
-      setErr(''); setOk('');
+      setErr('');
+      setOk('');
       const payload = {
         role: form.role,
         name: form.name.trim(),
@@ -86,9 +90,13 @@ const RegisterUserCard = ({ onSuccess }) => {
           <button type="submit" className="register-submit" disabled={submitting}>
             {submitting ? 'Creating...' : 'Create User'}
           </button>
-          <button type="button" className="register-reset" onClick={() =>
-            setForm({ role: 'electrician', name: '', email: '', password: '', phone: '', department: '', specialization: '' })
-          }>
+          <button
+            type="button"
+            className="register-reset"
+            onClick={() =>
+              setForm({ role: 'electrician', name: '', email: '', password: '', phone: '', department: '', specialization: '' })
+            }
+          >
             Reset
           </button>
         </div>
@@ -115,6 +123,7 @@ const AdminDashboard = ({ onLogout }) => {
     fetchComplaints();
     fetchElectricians();
     fetchStaff();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const computeStatsFromComplaints = (all) => {
@@ -179,7 +188,11 @@ const AdminDashboard = ({ onLogout }) => {
       setLoading(true);
       setMsg({ error: '', success: '' });
 
-      await API.patch(`/complaints/${assignModal.complaint._id}/assign`, { assignedTo: electricianId }, authHeaders());
+      await API.patch(
+        `/complaints/${assignModal.complaint._id}/assign`,
+        { assignedTo: electricianId },
+        authHeaders()
+      );
 
       setMsg({ success: 'Assigned successfully!', error: '' });
       closeAssign();
@@ -217,7 +230,7 @@ const AdminDashboard = ({ onLogout }) => {
     <div className="admin-dashboard">
       <header className="admin-header">
         <div className="logo-row">
-          <img src="/src/assets/admin-logo.png" alt="Admin" />
+          <img src={adminLogo} alt="Admin" />
           <h1>Admin Dashboard</h1>
         </div>
         <div className="user-row">
@@ -326,10 +339,16 @@ const AdminDashboard = ({ onLogout }) => {
           <div className="users-and-register">
             <div>
               <div style={{ display: 'flex', gap: 10, marginBottom: 12 }}>
-                <button className={userRoleTab === 'electrician' ? 'tab-active' : 'tab-inactive'} onClick={() => setUserRoleTab('electrician')}>
+                <button
+                  className={userRoleTab === 'electrician' ? 'tab-active' : 'tab-inactive'}
+                  onClick={() => setUserRoleTab('electrician')}
+                >
                   Electricians ({stats?.electricians ?? 0})
                 </button>
-                <button className={userRoleTab === 'staff' ? 'tab-active' : 'tab-inactive'} onClick={() => setUserRoleTab('staff')}>
+                <button
+                  className={userRoleTab === 'staff' ? 'tab-active' : 'tab-inactive'}
+                  onClick={() => setUserRoleTab('staff')}
+                >
                   Staff ({stats?.staff ?? 0})
                 </button>
               </div>
@@ -365,7 +384,7 @@ const AdminDashboard = ({ onLogout }) => {
         {tab === 'profile' && (
           <div className="admin-profile">
             <div className="profile-card">
-              <img src="/src/assets/admin-logo.png" alt="Admin" />
+              <img src={adminLogo} alt="Admin" />
               <div>
                 <p><strong>Name:</strong> {user?.name}</p>
                 <p><strong>Email:</strong> {user?.email}</p>
